@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<table id="discs">
+  <thead>
+    <th>Year</th>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Role</th>
+  </thead>
+  <tbody>
+    {% for disc in site.categories.discs %}
+    <tr class="disc" id="disc_{{ forloop.index }}">
+      <td class="year">{{ disc.date | date: "%Y" }}</td>
+      <td class="artist">{{ disc.artist }}</td>
+      <td class="name">{{ disc.title }}</td>
+      <td class="role">{{ disc.role }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

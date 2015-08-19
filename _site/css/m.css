@@ -141,6 +141,10 @@ body.index-html #yield {
   line-height: 18px;
   padding: 0; }
 
+body.discs-index-html #yield {
+  padding: 0;
+  background: none; }
+
 #discs {
   border-spacing: 1px 1px;
   border-collapse: separate;
@@ -197,8 +201,13 @@ body.index-html #yield {
 body.shared_files h2, body.shared_files p, body.shared_files form, body.data h2, body.data p, body.data form {
   margin-bottom: 1em; }
 
+body.songs-index-html #yield {
+  background: none;
+  padding: 0; }
+
 #songs {
-  width: 320px; }
+  width: 320px;
+  line-height: 1; }
   #songs .song {
     height: 40px;
     margin-bottom: 1px;
@@ -226,7 +235,7 @@ body.shared_files h2, body.shared_files p, body.shared_files form, body.data h2,
       position: absolute;
       top: 0;
       left: 0;
-      background: url(/assets/player-bg.png) no-repeat left top;
+      background: url(/images/player-bg.png) no-repeat left top;
       width: 40px;
       height: 40px; }
       #songs .song .audio a {
@@ -234,7 +243,7 @@ body.shared_files h2, body.shared_files p, body.shared_files form, body.data h2,
         height: 40px;
         width: 40px;
         text-indent: -999em;
-        background: url(/assets/player-play-sm.png) no-repeat center center;
+        background: url(/images/player-play-sm.png) no-repeat center center;
         background-size: contain; }
     #songs .song .seek {
       position: absolute;
@@ -266,10 +275,10 @@ body.shared_files h2, body.shared_files p, body.shared_files form, body.data h2,
   #songs .song.playing .audio {
     background: black; }
     #songs .song.playing .audio a {
-      background: url(/assets/player-pause.png) no-repeat center center; }
+      background: url(/images/player-pause.png) no-repeat center center; }
   #songs .song.playing .seek {
     display: block; }
 
 @media (-webkit-min-device-pixel-ratio: 2) {
   .song .audio a {
-    background: url(/assets/player-play.png) no-repeat center center; } }
+    background: url(/images/player-play.png) no-repeat center center; } }

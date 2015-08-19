@@ -1,5 +1,5 @@
 ---
 layout: default
 ---
-
-Matthew Saccuccimorano produces, records, mixes, and masters music for people.
+Matthew Saccuccimorano
+[matt@scaramangaindustries.com](mailto:matt@scaramangaindustries.com)

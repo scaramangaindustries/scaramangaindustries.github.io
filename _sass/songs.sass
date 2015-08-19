@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body.songs-index-html
+  #yield
+    background: none
+    padding: 0
+
 #songs
   width: 320px
-  
+  line-height: 1
   .song
     height: 40px
     margin-bottom: 1px
@@ -32,7 +37,7 @@
       position: absolute
       top: 0
       left: 0
-      background: url(/assets/player-bg.png) no-repeat left top
+      background: url(/images/player-bg.png) no-repeat left top
       width: 40px
       height: 40px
       a
@@ -40,7 +45,7 @@
         height: 40px
         width: 40px
         text-indent: -999em
-        background: url(/assets/player-play-sm.png) no-repeat center center
+        background: url(/images/player-play-sm.png) no-repeat center center
         background-size: contain
     .seek
       position: absolute
@@ -64,7 +69,6 @@
         background: white
         width: 0
         z-index: 2
-        
   .song:nth-child(odd)
     .meta
       background: rgb(20,20,20)
@@ -75,10 +79,10 @@
     .audio
       background: black
       a
-        background: url(/assets/player-pause.png) no-repeat center center
+        background: url(/images/player-pause.png) no-repeat center center
     .seek
       display: block
 
 @media (-webkit-min-device-pixel-ratio: 2)
   .song .audio a
-    background: url(/assets/player-play.png) no-repeat center center
+    background: url(/images/player-play.png) no-repeat center center
