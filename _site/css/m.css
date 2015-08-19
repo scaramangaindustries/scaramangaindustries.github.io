@@ -62,7 +62,8 @@ body {
   font-family: sans-serif;
   font-weight: bold;
   min-height: 100%;
-  margin: 0; }
+  margin: 0;
+  line-height: 1.2; }
 
 a {
   color: white;
@@ -111,7 +112,6 @@ a:hover {
       text-shadow: 1px 1px 1px #666; }
 
 #yield {
-  max-width: 320px;
   padding: 10px;
   font-weight: normal;
   background-color: black;
@@ -171,7 +171,7 @@ body.index-html #yield {
     background-color: rgba(0, 0, 0, 0.65); }
 
 @media screen and (max-width: 480px) {
-  #header, #songs, #discs, #yield {
+  #header, #yield {
     margin: 0 auto; }
 
   #nav {
@@ -183,7 +183,7 @@ body.index-html #yield {
     body.index-html #yield {
       position: static; } }
 @media screen and (max-height: 480px) {
-  #header, #songs, #discs, #yield {
+  #header, #yield {
     margin: 0 auto; }
 
   #nav {
