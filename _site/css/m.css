@@ -1,0 +1,275 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  background-color: #666;
+  color: white;
+  background-image: url(/images/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  min-height: 100%;
+  overflow-y: scroll; }
+
+body {
+  background: none;
+  padding: 0 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  min-height: 100%;
+  margin: 0; }
+
+a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 0.5s; }
+
+a:hover {
+  background: rgba(0, 0, 0, 0.1); }
+
+#header {
+  text-indent: -999em;
+  display: block;
+  width: 320px;
+  height: 103px;
+  padding: 40px 0 40px; }
+  #header img {
+    width: 100%;
+    height: auto;
+    display: block; }
+
+#nav {
+  width: 320px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased; }
+  #nav li {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 3px; }
+    #nav li span {
+      text-align: center; }
+    #nav li a {
+      padding: 3px;
+      text-shadow: 1px 1px 1px #000; }
+  #nav li.active {
+    background: rgba(0, 0, 0, 0.5); }
+    #nav li.active a {
+      color: white;
+      text-shadow: 1px 1px 1px #666; }
+
+#yield {
+  max-width: 320px;
+  padding: 10px;
+  font-weight: normal;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 320px;
+  box-sizing: border-box; }
+
+#footer {
+  display: none; }
+
+#user_new {
+  background: rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  padding: 20px; }
+  #user_new a {
+    display: none; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+body.index-html #yield {
+  background: none;
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0; }
+
+#discs {
+  border-spacing: 1px 1px;
+  border-collapse: separate;
+  max-width: 320px;
+  display: block; }
+  #discs th {
+    text-transform: lowercase;
+    font-variant: small-caps;
+    background: rgba(0, 0, 0, 0.8);
+    font-weight: normal;
+    font-size: 13px;
+    padding: 3px;
+    line-height: 16px; }
+  #discs td {
+    font-size: 12px;
+    line-height: 1.2em;
+    height: 30px;
+    font-weight: normal;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px; }
+  #discs .year {
+    font-size: 9px; }
+  #discs .name {
+    font-style: italic; }
+  #discs tr:nth-child(even) td {
+    background-color: #141414;
+    background-color: rgba(0, 0, 0, 0.65); }
+
+@media screen and (max-width: 480px) {
+  #header, #songs, #discs, #yield {
+    margin: 0 auto; }
+
+  #nav {
+    position: static;
+    margin: 40px auto; }
+
+  body {
+    padding: 0; }
+    body.index-html #yield {
+      position: static; } }
+@media screen and (max-height: 480px) {
+  #header, #songs, #discs, #yield {
+    margin: 0 auto; }
+
+  #nav {
+    position: static;
+    margin: 40px auto; }
+
+  body {
+    padding: 0; }
+    body.index-html #yield {
+      position: static; } }
+body.shared_files h2, body.shared_files p, body.shared_files form, body.data h2, body.data p, body.data form {
+  margin-bottom: 1em; }
+
+#songs {
+  width: 320px; }
+  #songs .song {
+    height: 40px;
+    margin-bottom: 1px;
+    position: relative;
+    padding-left: 41px;
+    font-weight: normal;
+    font-size: 12px;
+    overflow: hidden; }
+    #songs .song .meta {
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 24px;
+      padding: 8px; }
+      #songs .song .meta .artist {
+        font-weight: bold;
+        max-width: 270px;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      #songs .song .meta .name {
+        margin-bottom: 1em;
+        overflow: hidden;
+        max-width: 270px;
+        text-overflow: ellipsis; }
+    #songs .song .audio {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(/assets/player-bg.png) no-repeat left top;
+      width: 40px;
+      height: 40px; }
+      #songs .song .audio a {
+        display: block;
+        height: 40px;
+        width: 40px;
+        text-indent: -999em;
+        background: url(/assets/player-play-sm.png) no-repeat center center;
+        background-size: contain; }
+    #songs .song .seek {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      border-left: 1px solid white;
+      width: 100px;
+      display: none;
+      cursor: ew-resize; }
+      #songs .song .seek div {
+        background: white;
+        height: 100%;
+        position: absolute; }
+      #songs .song .seek .progress {
+        background: white;
+        opacity: 0.5;
+        width: 0;
+        z-index: 1; }
+      #songs .song .seek .playhead {
+        background: white;
+        width: 0;
+        z-index: 2; }
+  #songs .song:nth-child(odd) .meta {
+    background: #141414;
+    background: rgba(0, 0, 0, 0.65); }
+  #songs .song.playing .meta {
+    background: black; }
+  #songs .song.playing .audio {
+    background: black; }
+    #songs .song.playing .audio a {
+      background: url(/assets/player-pause.png) no-repeat center center; }
+  #songs .song.playing .seek {
+    display: block; }
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .song .audio a {
+    background: url(/assets/player-play.png) no-repeat center center; } }

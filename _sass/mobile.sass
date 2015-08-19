@@ -1,0 +1,17 @@
+@mixin tiny
+  #header, #songs, #discs, #yield
+    margin: 0 auto
+  #nav
+    position: static
+    margin: 40px auto
+
+  body
+    padding: 0
+    &.index-html #yield
+      position: static
+
+@media screen and (max-width: 480px)
+  @include tiny
+
+@media screen and (max-height: 480px)
+  @include tiny
