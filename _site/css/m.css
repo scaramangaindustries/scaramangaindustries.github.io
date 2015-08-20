@@ -132,6 +132,12 @@ a:hover {
 img {
   -ms-interpolation-mode: bicubic; }
 
+.progress-meter {
+  height: 15px;
+  background: white;
+  width: 0;
+  margin: 5px 0; }
+
 body.index-html #yield {
   background: none;
   position: absolute;
