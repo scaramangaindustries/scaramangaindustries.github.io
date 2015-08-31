@@ -5,44 +5,39 @@
       this.el = document.getElementById('uploads');
       this.el.addEventListener('change', (function(_this) {
         return function() {
-          return _this.batchUpload.apply(_this);
+          _this.initMeters();
+          return _this.upload(_this.el.files[0]);
         };
       })(this), false);
     }
 
-    ScaramangaUploader.prototype.batchUpload = function(e) {
-      var file, i, len, ref, results;
-      this.initMeters();
-      ref = this.el.files;
-      results = [];
-      for (i = 0, len = ref.length; i < len; i++) {
-        file = ref[i];
-        results.push(this.upload(file));
-      }
-      return results;
-    };
-
     ScaramangaUploader.prototype.upload = function(file) {
-      var $meter;
+      var $meter, params, upload;
       $meter = $("<div class='progress-meter' />");
       this.$meters.append($meter);
-      return new S3Upload({
-        bucket: this.bucket,
-        file: file,
-        onProgress: (function(_this) {
-          return function(percent, message) {
-            return $meter.css("width", percent + "%");
-          };
-        })(this),
-        onFinishS3Put: (function(_this) {
-          return function(public_url) {
-            return $meter.replaceWith("<div class='upload'>Successfully uploaded " + file.name + "</div>");
-          };
-        })(this),
-        onError: function(status) {
-          return console.log('Upload error: ', status);
+      params = {
+        Bucket: this.bucket,
+        Key: new Date().getTime() + "_" + file.name,
+        ContentType: file.type || "application/octet-stream",
+        Body: file
+      };
+      upload = new AWS.S3.ManagedUpload({
+        params: params
+      });
+      upload.on('httpUploadProgress', function(event) {
+        var pct;
+        pct = Math.floor(event.loaded / event.total * 100);
+        console.log(pct);
+        return $meter.css("width", pct + "%");
+      });
+      upload.send(function(err, data) {
+        if (err) {
+          return console.log(err);
+        } else {
+          return $meter.replaceWith("<div class='upload'>Successfully uploaded " + file.name + "</div>");
         }
       });
+      return true;
     };
 
     ScaramangaUploader.prototype.initMeters = function() {

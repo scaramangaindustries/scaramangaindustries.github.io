@@ -5,25 +5,41 @@ class window.ScaramangaUploader
     @bucket = "scaramanga-site-uploads"
     @el = document.getElementById('uploads')
     @el.addEventListener 'change', =>
-      @batchUpload.apply(@)
+      @initMeters()
+      @upload(@el.files[0])
     , false
-
-  batchUpload: (e) ->
-    @initMeters()
-    @upload(file) for file in @el.files
 
   upload: (file) ->
     $meter = $("<div class='progress-meter' />")
     @$meters.append $meter
-    new S3Upload
-      bucket: @bucket
-      file: file
-      onProgress: (percent, message) =>
-        $meter.css("width", "#{percent}%")
-      onFinishS3Put: (public_url) =>
+    params =
+      Bucket: @bucket
+      Key: new Date().getTime() + "_" + file.name
+      ContentType: file.type || "application/octet-stream"
+      Body: file
+    upload = new AWS.S3.ManagedUpload
+      #partSize: 10 * 1024 * 1024
+      #queueSize: 1
+      params: params
+    upload.on('httpUploadProgress', (event) ->
+      pct = Math.floor(event.loaded/event.total*100)
+      console.log pct
+      $meter.css("width", "#{pct}%")
+    )
+    upload.send((err, data) ->
+      if err
+        console.log err
+      else
         $meter.replaceWith("<div class='upload'>Successfully uploaded #{file.name}</div>")
-      onError: (status) ->
-        console.log 'Upload error: ', status
+    )
+    true
+    #new S3Upload
+      #bucket: @bucket
+      #file: file
+      #onProgress: (percent, message) =>
+      #onFinishS3Put: (public_url) =>
+      #onError: (status) ->
+        #console.log 'Upload error: ', status
 
   initMeters: ->
     return if @$meters
