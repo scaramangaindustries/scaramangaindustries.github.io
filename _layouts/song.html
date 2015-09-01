@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Scaramanga Industries</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="{{ site.bio }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/css/m.css?v{{ site.time | date: '%m%d%y%H%M%S' }}" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+  </head>
+  <body class="songs-index-html">
+    <div id="header">
+      <a href="/">
+        <img src="/images/logo.png" alt="Scaramanga Industries" />
+      </a>
+      <h1><a href="/">Scaramanga Industries</a></h1>
+    </div><!-- #header -->
+
+    <div id="yield">
+      {% include song.html %}
+    </div>
+
+    <ul id="nav" class="semantic-navigation">
+      <li class="{% if (page.url contains 'songs' %}active{% endif %}">
+        <a href="/songs"><span>Listen</span></a>
+      </li>
+      <li class="{% if (page.url contains 'disc' %}active{% endif %}">
+        <a href="/discs"><span>Discography</span></a>
+      </li>
+      <li class="{% if (page.url contains 'contact' %}active{% endif %}">
+        <a href="/contact"><span>Contact</span></a>
+      </li>
+    </ul>
+    <div id="footer">
+      <a href="/">Scaramanga Industries</a>
+    </div><!-- #footer -->
+    <script src="/js/m.js?v{{ site.time | date: '%m%d%y%H%M%S' }}"></script>
+  </body>
+</html>

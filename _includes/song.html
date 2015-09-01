@@ -1,0 +1,17 @@
+<div id="player"></div>
+<div id="songs">
+  <div class="song" id="song_1" data-name="{{ page.title }}" data-src="{{ page.mp3_url }}" data-button-selector=".audio a" data-name="{{ page.title }}" data-playhead-selector=".playhead" data-progress-selector=".progress" data-seek-selector=".seek">
+    <div class='audio'>
+      <a href="{{ page.mp3_url }}">Listen</a>
+    </div>
+    <div class='meta'>
+      <h3 class='artist'>{{ page.artist_name }}</h3>
+      <div class='name'>{{ page.title }}</div>
+      <div class='role'>{{ page.work_description }}</div>
+    </div>
+    <div class='seek'>
+      <div class='playhead'></div>
+      <div class='progress'></div>
+    </div>
+  </div>
+</div>
