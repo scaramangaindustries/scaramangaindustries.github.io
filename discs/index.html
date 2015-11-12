@@ -9,9 +9,9 @@ layout: default
     <th>Role</th>
   </thead>
   <tbody>
-    {% for disc in site.categories.discs %}
+    {% for disc in site.data.discs %}
     <tr class="disc" id="disc_{{ forloop.index }}">
-      <td class="year">{{ disc.date | date: "%Y" }}</td>
+      <td class="year">{{ disc.year }}</td>
       <td class="artist">{{ disc.artist }}</td>
       <td class="name">{{ disc.title }}</td>
       <td class="role">{{ disc.role }}</td>

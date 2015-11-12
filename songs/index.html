@@ -4,7 +4,7 @@ layout: default
 
 <div id="player"></div>
 <div id="songs">
-  {% for song in site.categories.songs %}
+  {% for song in site.data.songs %}
   <div class="song" id="song_{{ forloop.index }}" data-name="{{ song.title }}" data-src="{{ song.mp3_url }}" data-button-selector=".audio a" data-name="{{ song.title }}" data-playhead-selector=".playhead" data-progress-selector=".progress" data-seek-selector=".seek">
     <div class='audio'>
       <a href="{{ song.mp3_url }}">Listen</a>
@@ -12,7 +12,6 @@ layout: default
     <div class='meta'>
       <h3 class='artist'>{{ song.artist_name }}</h3>
       <div class='name'>{{ song.title }}</div>
-      <div class='role'>{{ song.work_description }}</div>
     </div>
     <div class='seek'>
       <div class='playhead'></div>
