@@ -69,6 +69,7 @@ class window.S3Upload
     data.append 'Content-Type', file_type
     data.append 'file', file
     xhr.setRequestHeader 'x-amz-acl', 'public-read'
+    xhr.setRequestHeader 'x-amz-grant-full-control', "emailAddress=#{@owner}"
 
     xhr.send data
 
