@@ -17,7 +17,6 @@ class window.ScaramangaUploader
     @$meters.append $meter
     new S3Upload
       bucket: @bucket
-      owner: "scaramanga_at_twcny.rr.com".replace("_at_","@")
       file: file
       onProgress: (percent, message) =>
         $meter.css("width", "#{percent}%")
